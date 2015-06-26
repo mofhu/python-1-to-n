@@ -26,4 +26,9 @@ So, 试着看看能不能解决这个小的真实需求?
 
 看上去, 最艰难的 `从0到1` 已经有人走过去了. 下面就是应用 python, 自己进入这个体系测试. 
 
-就作为第二个从 1 到 n 的小项目(第一个是 mascot csv process)吧, over.
+- [telegram-cli](https://github.com/vysheng/tg)
+- [telegram-cli-backup](https://github.com/psamim/telegram-cli-backup)
+
+就作为第二个从 1 到 n 的小项目(第一个是 mascot csv process)吧
+
+over.
