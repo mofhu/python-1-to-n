@@ -32,3 +32,58 @@ So, 试着看看能不能解决这个小的真实需求?
 就作为第二个从 1 到 n 的小项目(第一个是 mascot csv process)吧
 
 over.
+
+### 实现思路
+
+MVP: 复刻已有 cli 客户端实现 + py 
+
+later: bot to copy automatically
+
+## How to do it?
+
+
+### 站在巨人的肩膀上
+
+ 安装 `telegram-cli`  
+ in mac, 按照 README 所说流程即可.
+ 
+ ```
+ brew install libconfig
+ brew install readline
+ brew install lua
+ brew install python
+ brew install libevent
+ brew install jansson
+ export CFLAGS="-I/usr/local/include -I/usr/local/Cellar/readline/6.3.8/include"
+ export LDFLAGS="-L/usr/local/lib -L/usr/local/Cellar/readline/6.3.8/lib"
+ ./configure && make
+ ```
+ 
+可能需要使用 `sudo bin/telegram-cli -k tg-server.pub` 进行第一次登陆
+
+phone number的格式: +86 1xxxxxxxxxx
+
+在 cli 中导出:
+
+`dialog_list`: 输出所有的对话对象(包括个人和群组)
+
+`history <dialog_name> [limit]`: 在 shell 中输出历史记录
+
+```
+> history Telegram
+[21:42]  Telegram »»» Telegram code 39386
+[21:44]  Telegram <<< Test
+[21:45]  Telegram <<< test in cli
+[21:59]  Telegram »»» Telegram code 70607
+[21:59]  Telegram »»» Telegram code 63859
+
+> history Telegram 2 # 只导出两条记录
+[21:59]  Telegram »»» Telegram code 70607
+[21:59]  Telegram »»» Telegram code 63859
+```
+
+### Next
+
+使用 python 调用命令行, 实现自动化操作 telegram-cli, 并自动存储输出.
+
+初步思路: 使用 `subprocess` 模块
