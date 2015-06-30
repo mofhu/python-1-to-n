@@ -87,3 +87,16 @@ phone number的格式: +86 1xxxxxxxxxx
 使用 python 调用命令行, 实现自动化操作 telegram-cli, 并自动存储输出.
 
 初步思路: 使用 `subprocess` 模块
+
+```
+import subprocess
+
+p = subprocess.Popen('ls', stdout=subprocess.PIPE, shell=True)
+print(p.stdout.read())
+```
+
+把`ls` 替换成`sudo bin/telegram-cli` 时 似乎就不太 work 了
+
+忽然发现, **通过命令行调用其它程序 i/o 是一个非常重要的功能.** 
+
+看来这个坑比想象中有意思得多啊!
