@@ -100,3 +100,40 @@ print(p.stdout.read())
 忽然发现, **通过命令行调用其它程序 i/o 是一个非常重要的功能.** 
 
 看来这个坑比想象中有意思得多啊!
+
+---
+
+### 纠结的尝试
+
+设计了最简的两个脚本尝试使用 subprocess 模块控制 i/o
+
+问题在于, subprocess 似乎只能进行一次 i/o 控制, 不能多次交互(?).
+
+纠结的初步尝试卡壳了...需要启动 wheel of python :)
+
+### 继续尝试 20150705
+
+改用 `fcntl` 模块 [ref](http://www.cnblogs.com/yangxudong/p/3753846.html)
+
+commit f9f581: basic version
+
+commit fe6b36: 更多的交互.
+
+但发现了新的问题: 
+
+使用 subprocess 的问题在于, 子进程并不能通过某种方式来反馈需要信息输入. 因此可能无法实现复杂的输入选择(简单流程可以写死成几个固定输入, 但无法实现随机应变)
+
+看上去使用 shell script 是一个交互的简单方式. 可以不影响正常使用 shell, 只是把记录输出为文件.
+
+- 但问题是不便于自动化和选择输入, 不论写死代码还是后续处理文档, 感觉都有些尴尬.
+- 另外发现了 python 的 `pty` module 也许可以用来实现类似功能?
+
+还有的其它办法: 看看 lua 脚本是如何实现导出的.
+
+- 20150706 继续尝试
+
+发现了 [`Pexpect`](https://github.com/pexpect/pexpect).
+
+(by google: python shell 交互--看到了吗, 经过几天的思考, 搜索的关键词定义愈发清晰准确.)  
+[如何用Python交互执行shell脚本](http://my.oschina.net/memorybox/blog/94183)
+
