@@ -134,6 +134,12 @@ commit fe6b36: 更多的交互.
 
 发现了 [`Pexpect`](https://github.com/pexpect/pexpect).
 
-(by google: python shell 交互--看到了吗, 经过几天的思考, 搜索的关键词定义愈发清晰准确.)  
+(by google: `python shell 交互` --看到了吗, 经过几天的思考, 搜索的关键词定义愈发清晰准确.)  
 [如何用Python交互执行shell脚本](http://my.oschina.net/memorybox/blog/94183)
 
+
+- 20150707 
+
+关于 why use tty, not subprocess 的深入(?) 机制解释.  
+深入理解需要明白 buffer 和 pipe 等概念, 暂不深究.  
+http://pexpect.readthedocs.org/en/latest/FAQ.html
