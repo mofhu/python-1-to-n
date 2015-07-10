@@ -143,3 +143,37 @@ commit fe6b36: 更多的交互.
 关于 why use tty, not subprocess 的深入(?) 机制解释.  
 深入理解需要明白 buffer 和 pipe 等概念, 暂不深究.  
 http://pexpect.readthedocs.org/en/latest/FAQ.html
+
+## Chaos to pexpect
+
+- 20150710
+
+开始使用 `pexpect` 模块研究 cli
+
+看了几段之后, 有点混乱. 突然意识到需要整理框架, 和按照我的目标(tg-cli)行动:
+
+- `spawn()` 用来创建新进程
+- 交互的关键: `expect()` 和 `send()` [link](http://pexpect.readthedocs.org/en/latest/overview.html)
+- `interact()`可让用户操作.
+- `logfile()`可输出 log 为指定文件
+
+```
+import pexpect
+child = pexpect.spawn ('ftp ftp.openbsd.org')
+child.expect ('Name .*: ') #如果 expect 不到, 会卡住到 timeout
+child.sendline ('anonymous')
+child.expect ('Password:')
+child.sendline ('noah@example.com')
+child.expect ('ftp> ')
+child.sendline ('ls /pub/OpenBSD/')
+child.expect ('ftp> ')
+print child.before   # Print the result of the ls command.
+child.interact()     # Give control of the child to the user.
+```
+
+完成了最早的想法: py 调用另一个 py 脚本, 并读取另一个脚本输出与用户交互
+
+原则上, 通过积累相关输出, 应该可以实现最初想法.
+
+- 输入登陆码等(需要通过 pexpect 输送内容到 tg, 便于判断)
+- 开始输出历史记录时, 记录下 log
