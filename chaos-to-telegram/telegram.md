@@ -177,3 +177,13 @@ child.interact()     # Give control of the child to the user.
 
 - 输入登陆码等(需要通过 pexpect 输送内容到 tg, 便于判断)
 - 开始输出历史记录时, 记录下 log
+
+### 20150712
+
+- 可以很开心的使用 pexpect 交互了.
+- 但是正想在 tg-cli 测试时, 发现 tg-cli 挂了...
+- 在 GitHub 搜索 issue 等折腾半个多小时, 似乎有这么几个问题: 
+  - 最近 telegram 被攻击? [issue 692](https://github.com/vysheng/tg/issues/692)
+  - 被墙? (ping 服务器不通..) 
+  - 也许需要换 vpn 之类再测试了?
+  - 真是伤感的故事...
