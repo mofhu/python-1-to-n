@@ -187,3 +187,8 @@ child.interact()     # Give control of the child to the user.
   - 被墙? (ping 服务器不通..) 
   - 也许需要换 vpn 之类再测试了?
   - 真是伤感的故事...
+
+### 20150721
+
+- 又试着登录 tg-cli, 失灵时不灵(几次登录有一次可用)
+- 也许又可以继续开发了 :)
