@@ -13,12 +13,12 @@ SAE 使用 python 2.7
 
 本地开发 
 
-dev_server.py: 似乎直接运行脚本在我的电脑上有 bug, 发现可以把脚本 copy 到需要部署的目录中使用...
+`dev_server.py`: 似乎直接运行脚本在我的电脑上有 bug, 发现可以把脚本 copy 到需要部署的目录中使用...
 后来发现已经正常安装在 %PATH 中, 但需要 sudo 才可直接运行
 
 部署
 
-saecloud
+`saecloud`
 
 注意, 一定在应用的本地开发目录，也就是index.wsgi和config.yaml所在的目录进行各种操作
 
