@@ -1,4 +1,4 @@
-# Bottle 入门手册
+# Bottle 乱入手册
 
 缘起:
 
@@ -6,7 +6,9 @@ SAE 架构已有, 如何把向听数计算器部署到网站上?
 
 尝试使用最简单的 python 框架之一 `Bottle`.
 
-结果相当顺利的成功了(大约两个 30 min就完成了可用原型), 展现出了 python 快速构建原型的强大能力.
+结果相当顺利的成功了(大约两个 30 min就完成了可用原型), 展现出了 python 快速构建原型的强大能力. 
+
+这里简要记录几个入门细节.
 
 ###[MVP repo](https://github.com/organization-lab/gbmj-sae/tree/bdb901bfb29ab3263f028f2c91987a6585d73ce0)
 
@@ -52,6 +54,15 @@ def hand():
 输出方面, 由于输出多行信息(且最好还能适当优化 HTML 格式), 使用了 Bottle 自带的简单模板 [SimpleTemplate Engine](http://bottlepy.org/docs/0.12/stpl.html)
 
 HTML 前端完全不懂(前面表格也因此出了一些小问题), 如果要做更复杂的展示, 可能还需要一些尝试. 使用了一个在线测试器提高调试模板的效率.
+
+
+## 后续?
+
+已经发现了 django 入门指南之[最流行框架快速体验教程](http://wiki.woodpecker.org.cn/moin/ObpLovelyPython/AbtDjango)
+
+和原理介绍之 [AbtWebModules](http://wiki.woodpecker.org.cn/moin/ObpLovelyPython/AbtWebModules)
+
+Web 开发之旅可以展开. 备用, 如有需求可随时开动 :)
 
 ---
 
